@@ -1,0 +1,121 @@
+sistema_origem,nome_produto,marca,categoria,unidade,quantidade,preco
+ERP-SAP,PARAFUSO SEXT. ACO M8X20,Gerdau,Fixadores,UN,500,0.45
+Planilha Almoxarife,paraf m8x20 aco,,Fixador,PC,-10,0.50
+API Fornecedor,Hex Bolt M8x20 Steel,Gerdau S.A.,,pçs,1000,0.00
+Sistema Legado,ROLAMENTO 6204 ZZ,SKF,Mecânica,PÇ,50,25.90
+Nota Fiscal PDF,Rol de esfera 6204,,mecanica,unidade,12,28.50
+ERP-SAP,Ball Bearing 6204ZZ,SFK,Mecânica,UN,200,999999
+Planilha Almoxarife,luva vaqueta mista,,EPI,PAR,150,12.50
+Sistema Legado,LUVA DE COURO VAQ.,Kalipso,Segurança,PR,30,14.00
+API Fornecedor,Leather Glove Size 9,Kalyipso,EPI,Par,,0.00
+ERP-SAP,DISJUNTOR TRIPOLAR 63A,Siemens,Elétrica,UN,40,85.00
+Nota Fiscal PDF,disj. trip. 63 a,Siemes,eletrica,pç,-5,90.50
+Sistema Legado,Circuit Breaker 3P 63A,Siemens,,PC,15,0.00
+API Fornecedor,VALVULA ESFERA LATAO 1 POL,Deca,Hidráulica,UN,20,45.00
+Planilha Almoxarife,valv. esf. 1",,Hidraulica,pç,5,48.20
+ERP-SAP,Brass Ball Valve 1 in,Deca,Hidráulica,CX,1,999999
+Sistema Legado,OLEO LUBRIF. AW68,Shell,Lubrificantes,L,200,18.50
+Nota Fiscal PDF,oleo aw 68 20L,,lubrif.,galao,10,350.00
+ERP-SAP,Hydraulic Oil AW 68,Shel,Lubrificantes,ML,200000,-15.00
+Planilha Almoxarife,mangueira pu 8mm azul,Festo,Pneumática,M,150,3.50
+API Fornecedor,MANG. POLIURETANO 8MM,,Pneumatica,CM,15000,0.03
+Sistema Legado,PU Hose 8mm Blue,Festo,Pneumática,ROL,2,999999
+ERP-SAP,RELE TERMICO 2.5-4A,WEG,Elétrica,UN,25,65.00
+Planilha Almoxarife,rele sobrecarga 2.5 4,,eletrica,pç,8,70.00
+Nota Fiscal PDF,Thermal Relay 2.5-4.0A,WEG,,PC,-2,0.00
+API Fornecedor,CORREIA EM V A-40,Gates,Mecânica,UN,60,15.80
+Sistema Legado,correia a40,,mecanica,pç,22,17.00
+ERP-SAP,V-Belt A40,Gattes,Mecânica,UN,100,0.00
+Planilha Almoxarife,capacete seg. branco,MSA,EPI,UN,80,22.00
+Nota Fiscal PDF,CAPACETE ABA FRONTAL,,Segurança,PC,45,24.50
+API Fornecedor,Safety Helmet White,M.S.A.,EPI,unidade,200,-5.00
+ERP-SAP,PORCA SEXT INOX M10,Ciser,Fixadores,UN,1000,0.80
+Sistema Legado,porca m10 aco inox,,fixador,Cento,10,75.00
+Planilha Almoxarife,Stainless Hex Nut M10,Ciser,,pç,500,0.00
+API Fornecedor,ARRUELA LISA ZINC 1/2,Ciser,Fixadores,UN,2000,0.15
+Nota Fiscal PDF,arruela lisa 1/2 pol zinc,,Fixadores,KG,10,35.00
+Sistema Legado,Flat Washer 1/2 Zinc,Cisser,Fixadores,g,10000,999999
+ERP-SAP,FITA ISOLANTE 19MMX20M,3M,Elétrica,ROLO,150,8.50
+Planilha Almoxarife,fita iso. preta 20m,,eletrica,un,40,9.20
+API Fornecedor,Electrical Tape 19mm,3 M,Elétrica,RL,-10,0.00
+Sistema Legado,FILTRO OLEO HIDR. RETORNO,Parker,Hidráulica,UN,15,120.00
+Nota Fiscal PDF,filtro hidraulico,,hidraulica,pç,3,135.00
+Planilha Almoxarife,Hydraulic Oil Filter,Parker,Hidráulica,UN,30,999999
+ERP-SAP,ENGRENAGEM CILINDRICA Z30,Engrenagens BR,Mecânica,UN,10,450.00
+API Fornecedor,eng. cil. 30 dentes,,mecanica,pç,2,480.00
+Sistema Legado,Spur Gear Z=30,Engr BR,Mecânica,PC,5,0.00
+Planilha Almoxarife,o-ring nbr 222,,Vedações,UN,300,1.50
+Nota Fiscal PDF,ANEL ORING 222 NBR,Sabo,Vedacao,PC,150,1.80
+ERP-SAP,O-Ring Seal 222 NBR,Sabó,Vedações,unidade,1000,-15.00
+API Fornecedor,CONTATOR TRIPOLAR 32A 220V,Schneider,Elétrica,UN,20,110.00
+Sistema Legado,contator 32a bob 220,,eletrica,pç,8,125.00
+Planilha Almoxarife,3P Contactor 32A 220VAC,Scheneider,,PC,50,0.00
+ERP-SAP,CILINDRO PNEUM ISO 32X50,SMC,Pneumática,UN,5,320.00
+Nota Fiscal PDF,cil. duplo acao 32x50,,pneumatica,pç,1,340.00
+API Fornecedor,Pneumatic Cylinder 32x50,SMC Corporation,Pneumática,PC,-1,999999
+Planilha Almoxarife,graxa litio mp2 azul,,Lubrificantes,KG,50,45.00
+Sistema Legado,GRAXA MP2 BALDE 20KG,Texaco,Lubrificantes,BD,2,850.00
+ERP-SAP,Lithium Grease MP2,Texxaco,Lubrificantes,G,50000,0.04
+API Fornecedor,BOTA SEG. BICO ACO T40,Marluvas,EPI,PAR,30,85.00
+Nota Fiscal PDF,botina bico de aco 40,,seguranca,pr,12,92.00
+Planilha Almoxarife,Steel Toe Boot Size 40,Marluvas,,Par,100,-5.00
+ERP-SAP,CABO FLEXIVEL 2.5MM PRETO,Sil,Elétrica,M,500,1.20
+Sistema Legado,cabo flex 2.5 pt,,eletrica,RL,5,115.00
+API Fornecedor,Flex Cable 2.5mm Black,Sil Cabos,Elétrica,CM,50000,999999
+Planilha Almoxarife,curva pvc 90g 50mm esgoto,Tigre,Hidráulica,UN,40,12.50
+Nota Fiscal PDF,CURVA 90 50MM PVC,,hidraulica,pç,15,14.00
+ERP-SAP,PVC Elbow 90D 50mm,Tigre S/A,Hidráulica,PC,-5,0.00
+API Fornecedor,RETENTOR 50X72X8 NBR,Sabo,Vedações,UN,60,18.90
+Sistema Legado,retentor eixo 50x72x8,,vedacao,pç,20,21.50
+Planilha Almoxarife,Oil Seal 50x72x8,Sabó,,unidade,150,0.00
+ERP-SAP,ADESIVO TRAVA ROSCA 50G,Loctite,Fixadores,UN,15,65.00
+Nota Fiscal PDF,trava rosca alto torque,,fixador,tubo,4,72.00
+API Fornecedor,Threadlocker Red 50g,Loctite,Fixadores,g,750,999999
+Planilha Almoxarife,acoplamento elastico a3,,Mecânica,UN,10,185.00
+Sistema Legado,ACOPL. BORRACHA TIPO A3,Vulcan,mecanica,pç,2,210.00
+ERP-SAP,Rubber Coupling A3,Vulcan,,PC,-2,-50.00
+API Fornecedor,SENSOR INDUTIVO M12 PNP,Sick,Elétrica,UN,12,145.00
+Nota Fiscal PDF,sensor ind m12 24v,,eletrica,pç,3,160.00
+Planilha Almoxarife,Inductive Prox Sensor M12,Sick,Elétrica,PC,30,0.00
+ERP-SAP,REGULADOR PRESSAO AR 1/4,Norgren,Pneumática,UN,8,195.00
+Sistema Legado,reg. press. pneum 1/4,,pneumatica,pç,1,215.00
+API Fornecedor,Air Pressure Regulator 1/4,Norgen,,unidade,15,999999
+Planilha Almoxarife,bomba centrifuga 1cv trif,,Hidráulica,UN,3,850.00
+Nota Fiscal PDF,BOMBA AGUA 1CV 220/380V,Schneider,hidraulica,pç,1,920.00
+ERP-SAP,Centrifugal Water Pump 1HP,Schneider,,PC,-1,0.00
+API Fornecedor,PROTETOR AURICULAR PLUG,3M,EPI,UN,500,2.50
+Sistema Legado,prot. aud. silicone,,Segurança,PR,150,3.00
+Planilha Almoxarife,Earplugs Corded,3 M,EPI,Par,1000,-1.00
+ERP-SAP,OLEO CORTE SOLUVEL 20L,Houghton,Lubrificantes,BD,5,380.00
+Nota Fiscal PDF,oleo soluvel usinagem,,lubrif.,L,40,21.00
+API Fornecedor,Soluble Cutting Oil,Houghton,Lubrificantes,ML,100000,999999
+Planilha Almoxarife,barra roscada m8 zinc 1m,Ciser,Fixadores,UN,100,8.50
+Sistema Legado,BARRA ROSC. M8 X 1000MM,,fixador,pç,25,9.80
+ERP-SAP,Threaded Rod M8x1m,Cisser,,M,-5,0.00
+API Fornecedor,ROL. ROLO CONICO 30205,Timken,Mecânica,UN,40,55.00
+Nota Fiscal PDF,rolamento 30205 conico,,mecanica,pç,12,62.50
+Planilha Almoxarife,Tapered Roller Bear 30205,Timken,Mecânica,PC,150,999999
+ERP-SAP,BARRA CONECTOR SINDAL 16MM,Fame,Elétrica,UN,80,6.50
+Sistema Legado,borne sindal 16mm 12 polos,,eletrica,barra,15,7.80
+API Fornecedor,Terminal Block 16mm 12P,Fame,,pç,-10,0.00
+Planilha Almoxarife,valvula retencao port 2",Mipel,Hidráulica,UN,6,280.00
+Nota Fiscal PDF,VALV. RET. PORTINHOLA 2 POL,,hidraulica,pç,2,310.00
+ERP-SAP,Swing Check Valve 2",Mipel,Hidráulica,PC,15,999999
+API Fornecedor,CONEXAO TEE ENGATE RAP 8MM,Festo,Pneumática,UN,120,8.50
+Sistema Legado,Tee rapido tubo 8mm,,pneumatica,pç,45,9.80
+Planilha Almoxarife,Push-in T-Fitting 8mm,Festo Pneumatic,,unidade,-3,0.00
+ERP-SAP,OCULOS SEGURANCA INCOLOR,Danny,EPI,UN,250,5.50
+Nota Fiscal PDF,oculos prot. transparente,,seguranca,pç,80,6.20
+API Fornecedor,Safety Glasses Clear,Dany,EPI,PC,1000,-2.50
+Planilha Almoxarife,junta papelao hidr 1/16,TeADIT,Vedações,M2,10,85.00
+Sistema Legado,PAPELAO HIDRAULICO 1.5MM,,vedacao,kg,5,45.00
+ERP-SAP,Gasket Sheet 1.5mm,Teadit,Vedações,CM2,50000,999999
+API Fornecedor,INVERSOR FREQUENCIA 2CV 220V,WEG,Elétrica,UN,4,1250.00
+Nota Fiscal PDF,inv. freq. cfw300 2cv,,eletrica,pç,1,1320.00
+Planilha Almoxarife,VFD Drive 2HP 220V,W.E.G.,,PC,-1,0.00
+ERP-SAP,MOTOREDUTOR COROA SEM FIM 1:30,SEW,Mecânica,UN,2,3500.00
+Sistema Legado,redutor rosca sem fim i=30,,mecanica,pç,1,3800.00
+API Fornecedor,Worm Gear Motor 1:30,S.E.W.,Mecânica,PC,5,999999
+Planilha Almoxarife,chumbador parabolt 3/8x3,Ciser,Fixadores,UN,200,3.20
+Nota Fiscal PDF,PARABOLT 3/8 ACO,,fixador,pç,40,3.80
+ERP-SAP,Wedge Anchor 3/8x3,Ciser,Fixadores,PC,-50,0.00

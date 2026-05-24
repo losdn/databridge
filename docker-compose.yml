@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  databridge-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABRICKS_HOST=https://dbc-584c3aa2-de74.cloud.databricks.com
+      - DATABRICKS_TOKEN=${DATABRICKS_TOKEN}
+      - DATABRICKS_WAREHOUSE_ID=${DATABRICKS_WAREHOUSE_ID}
+    restart: unless-stopped
