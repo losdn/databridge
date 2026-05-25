@@ -138,6 +138,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://tanstack-start-app.losdn.workers.dev",
         "https://databridge-panel.losdn.workers.dev",
         "https://losdn.github.io",
         "http://localhost:8000",
