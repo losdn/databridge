@@ -403,8 +403,8 @@ def auditoria():
                 f"SELECT * FROM {_tabela('gold_audit_consolidado')} LIMIT 50"
             )
             return AuditoriaResponse(
-                qtd_bronze=int(r["qtd_bronze"]) if r.get("qtd_bronze") is not None else None,
-                qtd_gold=int(r["qtd_gold"]) if r.get("qtd_gold") is not None else None,
+                qtd_bronze=int(r["qtd_bruta_bronze"]) if r.get("qtd_bruta_bronze") is not None else None,
+                qtd_gold=int(r["qtd_unificada_gold"]) if r.get("qtd_unificada_gold") is not None else None,
                 qtd_deduplicada=int(r["qtd_deduplicada"]) if r.get("qtd_deduplicada") is not None else None,
                 tempo_pipeline_segundos=int(r["tempo_pipeline_segundos"]) if r.get("tempo_pipeline_segundos") is not None else None,
                 detalhes=detalhes_rows,
