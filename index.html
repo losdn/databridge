@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataBridge — Painel de Produtos</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f1117;
+    --bg2: #1a1d27;
+    --bg3: #22263a;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #f0f2f8;
+    --text2: #8b90a8;
+    --text3: #555a72;
+    --green: #1D9E75;
+    --green-light: #E1F5EE;
+    --green-dark: #0F6E56;
+    --blue: #378ADD;
+    --blue-light: #E6F1FB;
+    --blue-dark: #185FA5;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 56px;
+    background: var(--bg2);
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--green);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 17px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+  }
+
+  .brand-sub {
+    font-size: 12px;
+    color: var(--text2);
+  }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text2);
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 99px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--text3);
+  }
+
+  .dot.green { background: var(--green); }
+  .dot.red { background: #E24B4A; }
+
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+
+  .metric {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+  }
+
+  .metric-label {
+    font-size: 11px;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .metric-val {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.5px;
+  }
+
+  .metric-sub {
+    font-size: 11px;
+    color: var(--text3);
+    margin-top: 3px;
+  }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .card-title i {
+    font-size: 15px;
+    color: var(--text2);
+  }
+
+  .search-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    background: var(--bg3);
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 13px;
+    padding: 0 12px;
+    height: 36px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  input[type="text"]:focus {
+    border-color: var(--green);
+  }
+
+  input[type="text"]::placeholder {
+    color: var(--text3);
+  }
+
+  button {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0 16px;
+    height: 36px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+
+  button:hover { opacity: 0.88; }
+  button:disabled { opacity: 0.45; cursor: default; }
+
+  .result-box {
+    background: var(--bg3);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    min-height: 90px;
+    font-size: 13px;
+    color: var(--text2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .result-content { width: 100%; }
+
+  .result-main {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 12px;
+    color: var(--text2);
+  }
+
+  .result-row:last-child { border-bottom: none; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .badge-green { background: rgba(29,158,117,0.18); color: #5DCAA5; }
+  .badge-blue { background: rgba(55,138,221,0.18); color: #85B7EB; }
+  .badge-gray { background: var(--bg3); color: var(--text2); border: 0.5px solid var(--border2); }
+
+  .ncm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .ncm-card {
+    background: var(--bg);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+  }
+
+  .ncm-card.top { border-color: rgba(29,158,117,0.4); }
+
+  .ncm-code {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+
+  .ncm-desc {
+    font-size: 11px;
+    color: var(--text2);
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .ncm-score-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 4px;
+  }
+
+  .score-bar {
+    height: 3px;
+    background: var(--border2);
+    border-radius: 2px;
+  }
+
+  .score-fill {
+    height: 3px;
+    background: var(--green);
+    border-radius: 2px;
+  }
+
+  .full-card {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    table-layout: fixed;
+  }
+
+  th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 0 0 10px;
+    border-bottom: 0.5px solid var(--border2);
+  }
+
+  td {
+    padding: 9px 0;
+    border-bottom: 0.5px solid var(--border);
+    color: var(--text);
+    vertical-align: middle;
+    word-break: break-word;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .loading {
+    text-align: center;
+    color: var(--text3);
+    padding: 2rem;
+    font-size: 13px;
+  }
+
+  .pag-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 12px;
+    color: var(--text2);
+  }
+
+  .pag-btns { display: flex; gap: 6px; }
+
+  .pag-btn {
+    background: var(--bg3);
+    color: var(--text);
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius-sm);
+    padding: 0 12px;
+    height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .pag-btn:hover:not(:disabled) { border-color: var(--green); }
+  .pag-btn:disabled { opacity: 0.35; cursor: default; }
+
+  @media (max-width: 700px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .grid2 { grid-template-columns: 1fr; }
+    .ncm-grid { grid-template-columns: 1fr; }
+    .topbar { padding: 0 1rem; }
+    .main { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-icon"><i class="ti ti-database"></i></div>
+    <div>
+      <div class="brand-name">DataBridge</div>
+      <div class="brand-sub">Padronização inteligente de produtos</div>
+    </div>
+  </div>
+  <div class="status-pill">
+    <div class="dot" id="status-dot"></div>
+    <span id="status-txt">verificando...</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="metric-label">Produtos no pipeline</div>
+      <div class="metric-val" id="m-bronze">—</div>
+      <div class="metric-sub">registros brutos</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Produtos padronizados</div>
+      <div class="metric-val" id="m-gold">—</div>
+      <div class="metric-sub">após deduplicação</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Duplicatas removidas</div>
+      <div class="metric-val" id="m-dedup">—</div>
+      <div class="metric-sub">entradas eliminadas</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">Tempo do pipeline</div>
+      <div class="metric-val" id="m-tempo">—</div>
+      <div class="metric-sub">última execução</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title"><i class="ti ti-search"></i> Reconciliar produto</div>
+      <div class="search-row">
+        <input type="text" id="rec-input" placeholder="Ex: paraf sext zin M2..." onkeydown="if(event.key==='Enter')reconciliar()">
+        <button onclick="reconciliar()" id="rec-btn">Buscar</button>
+      </div>
+      <div class="result-box" id="rec-result">
+        <span>Digite um nome para encontrar o produto padronizado</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="ti ti-tag"></i> Classificar NCM</div>
+      <div class="search-row">
+        <input type="text" id="ncm-input" placeholder="Ex: valvula esfera latao..." onkeydown="if(event.key==='Enter')classificarNcm()">
+        <button onclick="classificarNcm()" id="ncm-btn">Classificar</button>
+      </div>
+      <div id="ncm-result" class="result-box">
+        <span>Digite um produto para ver os NCMs sugeridos</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-card">
+    <div class="card-title"><i class="ti ti-list"></i> Produtos padronizados</div>
+    <div id="produtos-area"><div class="loading">Carregando produtos...</div></div>
+    <div class="pag-row" id="pag-row" style="display:none">
+      <span id="pag-info"></span>
+      <div class="pag-btns">
+        <button class="pag-btn" onclick="mudarPag(-1)" id="btn-prev">← Anterior</button>
+        <button class="pag-btn" onclick="mudarPag(1)" id="btn-next">Próxima →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const API = 'https://databridge.up.railway.app';
+let paginaAtual = 1;
+let totalPaginas = 1;
+
+async function carregarStatus() {
+  try {
+    const r = await fetch(API + '/health');
+    const d = await r.json();
+    const ok = d.status === 'ok';
+    document.getElementById('status-dot').className = 'dot ' + (ok ? 'green' : 'red');
+    document.getElementById('status-txt').textContent = ok ? 'online · Databricks conectado' : 'conectando ao Databricks...';
+  } catch(e) {
+    document.getElementById('status-dot').className = 'dot red';
+    document.getElementById('status-txt').textContent = 'sem conexão';
+  }
+}
+
+async function carregarAuditoria() {
+  try {
+    const r = await fetch(API + '/auditoria');
+    const d = await r.json();
+    document.getElementById('m-bronze').textContent = d.qtd_bronze ?? '—';
+    document.getElementById('m-gold').textContent = d.qtd_gold ?? '—';
+    const dedup = (d.qtd_bronze && d.qtd_gold) ? Math.max(0, d.qtd_bronze - d.qtd_gold) : (d.qtd_deduplicada ?? '—');
+    document.getElementById('m-dedup').textContent = dedup;
+    const seg = d.tempo_pipeline_segundos;
+    document.getElementById('m-tempo').textContent = seg ? (seg >= 60 ? Math.round(seg/60) + ' min' : seg + 's') : '—';
+  } catch(e) {}
+}
+
+async function carregarProdutos(pag) {
+  const area = document.getElementById('produtos-area');
+  area.innerHTML = '<div class="loading">Carregando...</div>';
+  try {
+    const r = await fetch(API + '/produtos?pagina=' + pag + '&tamanho=10');
+    const d = await r.json();
+    totalPaginas = d.paginas || 1;
+    if (!d.produtos || !d.produtos.length) {
+      area.innerHTML = '<div class="loading">Nenhum produto encontrado</div>';
+      return;
+    }
+    let html = '<table><thead><tr><th style="width:32%">Nome padronizado</th><th style="width:18%">NCM</th><th style="width:35%">Descrição NCM</th><th style="width:15%">Confiança</th></tr></thead><tbody>';
+    d.produtos.forEach(p => {
+      const conf = p.ncm_confianca ? (p.ncm_confianca * 100).toFixed(0) + '%' : '—';
+      const desc = (p.descricao_ncm_1 || '—');
+      html += `<tr>
+        <td>${p.nome_padrao || '—'}</td>
+        <td><span class="badge badge-blue">${p.top_ncm_1 || '—'}</span></td>
+        <td style="color:#8b90a8;font-size:12px">${desc.length > 45 ? desc.substring(0,45)+'...' : desc}</td>
+        <td><span class="badge badge-green">${conf}</span></td>
+      </tr>`;
+    });
+    html += '</tbody></table>';
+    area.innerHTML = html;
+    document.getElementById('pag-info').textContent = 'Página ' + pag + ' de ' + totalPaginas + ' · ' + d.total + ' produtos';
+    document.getElementById('pag-row').style.display = 'flex';
+    document.getElementById('btn-prev').disabled = pag <= 1;
+    document.getElementById('btn-next').disabled = pag >= totalPaginas;
+  } catch(e) {
+    area.innerHTML = '<div class="loading">Erro ao carregar produtos</div>';
+  }
+}
+
+function mudarPag(dir) {
+  paginaAtual = Math.max(1, Math.min(totalPaginas, paginaAtual + dir));
+  carregarProdutos(paginaAtual);
+}
+
+async function reconciliar() {
+  const nome = document.getElementById('rec-input').value.trim();
+  if (!nome) return;
+  const btn = document.getElementById('rec-btn');
+  const box = document.getElementById('rec-result');
+  btn.disabled = true; btn.textContent = 'Buscando...';
+  box.innerHTML = '<span>Consultando Databricks...</span>';
+  try {
+    const r = await fetch(API + '/reconciliar', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({nome_produto: nome}) });
+    const d = await r.json();
+    const score = d.score_similaridade ? (d.score_similaridade * 100).toFixed(0) + '%' : '—';
+    let html = `<div class="result-content">
+      <div class="result-header">
+        <div class="result-main">${d.nome_padrao || '—'}</div>
+        <span class="badge badge-green">similaridade ${score}</span>
+      </div>`;
+    if (d.top_3_similares && d.top_3_similares.length > 1) {
+      html += `<div style="font-size:11px;color:#555a72;margin-bottom:4px;text-transform:uppercase;letter-spacing:.4px">Outros similares</div>`;
+      d.top_3_similares.slice(1).forEach(s => {
+        const sc = s.score ? (s.score*100).toFixed(0)+'%' : '';
+        html += `<div class="result-row"><span>${s.nome_padrao}</span><span class="badge badge-gray">${sc}</span></div>`;
+      });
+    }
+    html += '</div>';
+    box.innerHTML = html;
+  } catch(e) {
+    box.innerHTML = '<span>Erro ao consultar a API</span>';
+  }
+  btn.disabled = false; btn.textContent = 'Buscar';
+}
+
+async function classificarNcm() {
+  const nome = document.getElementById('ncm-input').value.trim();
+  if (!nome) return;
+  const btn = document.getElementById('ncm-btn');
+  const box = document.getElementById('ncm-result');
+  btn.disabled = true; btn.textContent = 'Classificando...';
+  box.innerHTML = '<span>Consultando Databricks...</span>';
+  try {
+    const r = await fetch(API + '/classificar-ncm', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({nome_produto: nome}) });
+    const d = await r.json();
+    const ncms = [
+      { code: d.top_ncm_1, desc: d.descricao_ncm_1, score: d.score_ncm_1, top: true },
+      { code: d.top_ncm_2, desc: d.descricao_ncm_2, score: d.score_ncm_2 },
+      { code: d.top_ncm_3, desc: d.descricao_ncm_3, score: d.score_ncm_3 },
+    ].filter(n => n.code);
+    let html = `<div class="result-content">
+      <div style="font-size:11px;color:#555a72;margin-bottom:8px">Produto reconhecido: <strong style="color:#8b90a8">${d.nome_padrao || nome}</strong></div>
+      <div class="ncm-grid">`;
+    ncms.forEach(n => {
+      const pct = n.score ? Math.round(n.score * 100) : 0;
+      html += `<div class="ncm-card ${n.top ? 'top' : ''}">
+        <div class="ncm-code">${n.code}</div>
+        <div class="ncm-desc">${(n.desc||'').substring(0,55)}${(n.desc||'').length>55?'...':''}</div>
+        <div class="ncm-score-row"><span>${pct}% confiança</span>${n.top ? '<span class="badge badge-green">principal</span>' : ''}</div>
+        <div class="score-bar"><div class="score-fill" style="width:${pct}%"></div></div>
+      </div>`;
+    });
+    html += '</div></div>';
+    box.innerHTML = html;
+  } catch(e) {
+    box.innerHTML = '<span>Erro ao consultar a API</span>';
+  }
+  btn.disabled = false; btn.textContent = 'Classificar';
+}
+
+carregarStatus();
+carregarAuditoria();
+carregarProdutos(1);
+</script>
+</body>
+</html>
